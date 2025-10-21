@@ -4,62 +4,109 @@ output:
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
-    source: embed
 ---
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
 library(tidyverse)
 library(p8105.datasets)
-
 library(plotly)
+library(janitor)
 ```
 
 ```{r}
-data(nyc_airbnb)
+# Data Cleaning
+data("instacart")
+instacart <- instacart %>% clean_names()
 
-nyc_airbnb = 
-  nyc_airbnb |> 
-  mutate(rating = review_scores_location / 2) |>
-  select(
-    neighbourhood_group, neighbourhood, rating, price, room_type, lat, long) |>
-  filter(
-    !is.na(rating), 
-    neighbourhood_group == "Manhattan",
-    room_type == "Entire home/apt",
-    price %in% 100:500)
+# delete missing
+instacart_clean <- instacart %>%
+  drop_na() %>%
+  filter(eval_set == "train") %>%   # only use the training set
+  mutate(
+    order_dow = factor(order_dow, 
+                       levels = 0:6, 
+                       labels = c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")),
+    reordered = ifelse(reordered == 1, "Yes", "No")
+  )
+
+```
+
+```{r, include=FALSE}
+# Check after the cleaning
+instacart_clean %>% summary()
+```
+
+
+```{r}
+# Sampling
+set.seed(123)
+instacart_sample <- instacart_clean %>% sample_n(50000)
 ```
 
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Box Plot — Order Hour by Day of Week
 
 ```{r}
-nyc_airbnb |>
-  mutate(text_label = str_c("Price: $", price, "\nRating: ", rating)) |> 
-  plot_ly(
-    x = ~lat, y = ~long, type = "scatter", mode = "markers",
-    color = ~price, text = ~text_label, alpha = 0.5)
+plot_ly(
+  data = instacart_sample,
+  x = ~order_dow,
+  y = ~order_hour_of_day,
+  type = "box",
+  color = ~order_dow,
+  colors = "viridis"
+) %>%
+  layout(
+    xaxis = list(title = "Day of Week"),
+    yaxis = list(title = "Order Hour of Day"),
+    title = "Distribution of Order Time by Day of Week"
+  )
 ```
 
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Bar Plot - Orders by Department 
 
 ```{r}
-nyc_airbnb |> 
-  mutate(neighbourhood = fct_reorder(neighbourhood, price)) |> 
-  plot_ly(y = ~price, color = ~neighbourhood, type = "box", colors = "viridis")
+dept_counts <- instacart_sample %>%
+  count(department, sort = TRUE)
+
+plot_ly(
+  data = dept_counts,
+  x = ~reorder(department, n),
+  y = ~n,
+  type = "bar",
+  color = "viridis"
+) %>%
+  layout(
+    xaxis = list(title = "Department", tickangle = -45),
+    yaxis = list(title = "Number of Orders"),
+    title = "Total Orders by Department"
+  )
 ```
 
-### Chart C
+### Line Plot — Orders by Hour of Day
 
 ```{r}
-nyc_airbnb |> 
-  count(neighbourhood) |> 
-  mutate(neighbourhood = fct_reorder(neighbourhood, n)) |> 
-  plot_ly(x = ~neighbourhood, y = ~n, color = ~neighbourhood, type = "bar", colors = "viridis")
+hourly_orders <- instacart_sample %>%
+  group_by(order_hour_of_day) %>%
+  summarize(total_orders = n())
+
+plot_ly(
+  data = hourly_orders,
+  x = ~order_hour_of_day,
+  y = ~total_orders,
+  type = "scatter",
+  mode = "lines+markers",
+  color = "viridis"
+) %>%
+  layout(
+    title = "Order Volume by Hour of Day",
+    xaxis = list(title = "Hour of Day (0–23)"),
+    yaxis = list(title = "Number of Orders")
+  )
 ```
 

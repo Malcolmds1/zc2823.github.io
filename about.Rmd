@@ -58,7 +58,7 @@ Bachelor of Science in **Finance**, Minor in **Mathematics** — June 2024
 
 ---
 
-## 🧠 Skills
+### 🧠 Skills
 
 **Programming & Analytics:**  
 Python (pandas, scikit-learn, XGBoost, TensorFlow, PyTorch), R (tidyverse, ggplot2), SQL (MySQL, Snowflake), Excel (VBA, Solver)
@@ -71,7 +71,7 @@ Regression, Classification, PCA, Clustering, A/B Testing, Time Series, Survival 
 
 ---
 
-## 📚 Publication
+### 📚 Publication
 
 Chen, Zhehao. *The Relationship between Chinese Consumer Behavior and Corporate Social Responsibility of Luxury Brands After COVID-19.*  
 Presented at the **2023 International Conference on Economic Management and Green Development (ICEMGD)**.  

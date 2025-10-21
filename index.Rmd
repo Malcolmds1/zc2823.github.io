@@ -1,0 +1,35 @@
+---
+title: "Welcome to My Personal Website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+## Hi, I'm Zhehao(Malcolm) Chen
+
+##### I'm a Master's student in **Biostatistics at Columbia University**, passionate about data science, analytics, and public health applications.
+<br>
+
+##### This website showcases my academic and professional journey — you can find:
+
+##### - My resume and experience under the [About](about.html) page  
+
+##### - A [Flexdashboard](dashboard.html) built using plotly
+
+<br>
+
+## 🌐 Connect
+
+- 📧 [Email](mailto:<czhworkingon@outlook.com>)
+
+- 💻 [GitHub](http://github.com/Malcolmds1/)
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/zhehao-chen-773697200/)
+
+
+
+
+
+
+

@@ -1,0 +1,88 @@
+---
+title: "About me"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+### 🎓 Education
+
+#### **Columbia University, Mailman School of Public Health**  
+Master of Public Health (MPH) in **Biostatistics** — Expected May 2026  
+**GPA**: 4.13 / 4.00  
+**Relevant Coursework:** Applied Regression, Statistical Computing, Categorical Data Analysis, Data Science, Machine Learning, Analysis of Large-Scale Data, Business Analytics, Leadership & Communication  
+
+
+#### **Kean University**  
+Bachelor of Science in **Finance**, Minor in **Mathematics** — June 2024  
+**GPA**: 3.98 / 4.00 (Rank 1/178)  
+**Revelent Coursework:** Macroeconomics, Quantitative Methods in Economics, Investment, International Business, Probability & Mathematical Statistics, Python for Business, Data Analysis <br>
+**Honors:** Dean’s Scholarship – First Class (Top 2%, 2021), Dean’s Scholarship – First Class (Top 2%, 2023)
+
+---
+
+### 💼 Professional Experience
+
+#### **InnovaAI Tech LLC** — Data Scientist Intern  
+##### San Francisco, CA | Jun 2025 – Present 
+- Built scalable **ETL pipelines** on Google Cloud (BigQuery, Cloud Storage) to process 65K+ healthcare & subscription records.  
+- Developed **churn prediction & diabetes risk models** using XGBoost, Random Forest, and logistic regression (AUC = 0.94).  
+- Used PCA + KMeans clustering to uncover customer segments, improving cohort targeting and retention by 12%.  
+- Created stakeholder-facing **Tableau dashboards** for real-time churn tracking, reducing churn by 15%.  
+- Collaborated with product and marketing teams to conduct **A/B testing** for retention campaigns.
+
+<br>
+
+#### **Frost & Sullivan** — Data Analyst Intern  
+##### Shanghai, China | Jul 2023 – Jan 2024  
+- Conducted **healthcare market forecasting** via regression models in Python, identifying $1.3B emerging opportunities.  
+- Built **SQL + Tableau dashboards** visualizing pricing and ROI trends across 50+ firms, supporting $150M+ investment planning.  
+- Applied **multivariate regression & cohort analysis** to optimize campaign ROI (+25%).
+
+<br>
+
+#### **J.P. Morgan Securities** — Business Analyst Intern  
+##### Shanghai, China | Jan 2023 – Feb 2023  
+- Performed **time-series regression** on pension fund data, informing $2B+ institutional portfolio strategies.  
+- Built interactive **Tableau dashboards** mapping policy changes to allocation shifts (↑ risk-adjusted return by 12%).  
+- Supported **retirement market benchmarking** and strategy recommendations.
+
+<br>
+
+#### **China Securities Co., Ltd.** — Data Analyst Intern  
+##### Shenzhen, China | Jun 2022 – Sep 2022  
+- Conducted **M&A financial modeling** and industry benchmarking supporting $150M+ transaction decisions.  
+- Automated **industry monitoring dashboards** with Python & Tableau, cutting reporting time by 40%.  
+- Designed **Power BI presentations** summarizing market insights that helped close 3 deals worth $420M+.
+
+---
+
+## 🧠 Skills
+
+**Programming & Analytics:**  
+Python (pandas, scikit-learn, XGBoost, TensorFlow, PyTorch), R (tidyverse, ggplot2), SQL (MySQL, Snowflake), Excel (VBA, Solver)
+
+**Data Visualization & BI Tools:**  
+Tableau, Power BI, Looker, Google Analytics, Adobe Analytics, GCP, AWS
+
+**Statistical & ML Techniques:**  
+Regression, Classification, PCA, Clustering, A/B Testing, Time Series, Survival Analysis, ETL Pipeline Design
+
+---
+
+## 📚 Publication
+
+Chen, Zhehao. *The Relationship between Chinese Consumer Behavior and Corporate Social Responsibility of Luxury Brands After COVID-19.*  
+Presented at the **2023 International Conference on Economic Management and Green Development (ICEMGD)**.  
+[DOI: 10.54254/2754-1169/27/20231209](http://dx.doi.org/10.54254/2754-1169/27/20231209)
+
+---
+
+
+
+
+
+
+
+
